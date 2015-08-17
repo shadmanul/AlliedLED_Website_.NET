@@ -1,0 +1,202 @@
+﻿@model IEnumerable<AlliedRenewableEnergyLTD.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int c = 0;
+                            
+}
+<div id="background">
+<!-- section start -->
+<!-- ================ -->
+<div class="section" style="padding-bottom:50px; padding-top:60px">
+	<div class="container">
+    <div style="margin:0px 0px 0px 0px;
+				    min-height:150px; 
+				    box-sizing:border-box; 
+				    -moz-box-sizing:border-box;
+                    -webkit-box-sizing:border-box;
+                    background-color:White;
+                    opacity: 0.99;
+                    padding:50px 50px 50px 50px;">
+		<div class="row object-non-visible" data-animation-effect="fadeIn">
+        
+            <div class="col-sm-0 col-xs-0 col-md-3">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default" id="sidebar">
+                        <div class="panel-heading" id="sidebar">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" id="titleside" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-th">
+                                </span>Home & Offices</a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon glyphicon-arrow-right text-info"></span><a id="sidebaritem" href="@Url.Action("Index", "Products", new { category = "LED Bulbs" })">LED Bulbs</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon glyphicon-arrow-right text-info"></span><a id="sidebaritem" href="@Url.Action("Index", "Products", new { category = "LED Lamps" })">LED Lamps</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon glyphicon-arrow-right text-info"></span><a id="sidebaritem" href="@Url.Action("Index", "Products", new { category = "Ceiling Lights" })">Ceiling Lights</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon glyphicon-arrow-right text-info"></span><a id="sidebaritem" href="@Url.Action("Index", "Products", new { category = "LED Panel Lights" })">LED Panel Lights</a>
+                                            @*<span class="badge">42</span>*@
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon glyphicon-arrow-right text-info"></span><a id="sidebaritem" href="@Url.Action("Index", "Products", new { category = "LED Tube Lights" })">LED Tube Lights</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon glyphicon-arrow-right text-info"></span><a id="sidebaritem" href="@Url.Action("Index", "Products", new { category = "LED Office Lights" })">LED Office Lights</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon glyphicon-arrow-right text-info"></span><a id="sidebaritem" href="@Url.Action("Index", "Products", new { category = "Fancy Lights" })">Fancy Lights</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon glyphicon-arrow-right text-info"></span><a id="sidebaritem" href="@Url.Action("Index", "Products", new { category = "LED Strip Lights" })">LED Strip Lights</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default" id="sidebar">
+                        <div class="panel-heading" id="sidebar">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" id="titleside" data-parent="#accordion" href="#collapseTwo"><span class="glyphicon glyphicon-th">
+                                </span>Industrial</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon glyphicon-arrow-right text-info"></span><a id="sidebaritem" href="@Url.Action("Index", "Products", new { category = "LED Flood Light / Beam Light" })">LED Flood Lights/Beam Lights</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon glyphicon-arrow-right text-info"></span><a id="sidebaritem" href="@Url.Action("Index", "Products", new { category = "LED HI BAY" })">LED HI BAY</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default" id="sidebar">
+                        <div class="panel-heading" id="sidebar">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" id="titleside" data-parent="#accordion" href="#collapseThree"><span class="glyphicon glyphicon-th">
+                                </span>Outdoor</a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon glyphicon-arrow-right text-info"></span><a id="sidebaritem" href="@Url.Action("Index", "Products", new { category = "Street Lights" })">Street Lights</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+			<div class="col-md-9 col-xs-12 col-sm-12">
+                <img src="~/Content/img/s-2.jpg" width="100%" style="padding-bottom:25px"/>
+				<!-- portfolio items start -->
+				<div class="isotope-container row grid-space-20">
+                 @foreach (var item in Model)
+                 {
+                     c = c + 1;
+
+					<div class="col-sm-6 col-xs-12 col-md-4 isotope-item web-design">
+						<div>
+							<div class="overlay-container">
+								<img src="@Url.Action("GetImage", "Products", new { id = item.id })" alt="" width="100%">
+								<a class="overlay" data-toggle="modal" data-target="#project-@c">
+									<i class="fa fa-search-plus"></i>
+								</a>
+							</div>
+							<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1">@item.title</a>
+						</div>
+						<!-- Modal -->
+						<div class="modal fade" id="project-@c" tabindex="-1" role="dialog" aria-labelledby="project-@c-label" aria-hidden="true">
+							<div class="modal-dialog modal-lg">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+										<h4 class="modal-title" id="project-@c-label">@item.title</h4>
+									</div>
+									<div class="modal-body">
+                                        <br /><br />
+										<div class="row">
+                                        @if (item.description != null)
+                                        {
+											<div class="col-md-6">
+                                                <h3 style="font-size:xx-large; margin-left:20px; color: #686868 ; font-weight:bold">@item.title - @item.category</h3>
+												<ul>
+                                                    <li id="separator">
+                                                        @Html.Raw(item.description.Replace(Environment.NewLine, "</li><li id='separator'>").Replace(" - ", " <i class='fa fa-long-arrow-right' style='color:#c52d2f'></i> "))
+                                                    </li>
+                                                    <li id="separator" style="color:#42b3e5;">
+                                                        Date Added <i class="fa fa-long-arrow-right" style="color:#c52d2f"></i> @item.dateadded.Day/@item.dateadded.Month/@item.dateadded.Year
+                                                    </li>
+                                                </ul>
+                                                
+                                            </div>
+                                        
+											<div align="center" class="col-md-6">
+												<img src="@Url.Action("GetImage", "Products", new { id = item.id })" alt="" width ="100%">
+											</div>
+                                        }
+                                        else
+                                        {
+                                            <div align="center" class="col-md-12">
+												<img src="@Url.Action("GetImage", "Products", new { id = item.id })" alt="" width ="100%">
+											</div>
+                                        }
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Modal end -->
+					</div>
+
+                 }
+                </div>
+				<!-- portfolio items end -->
+                	
+			</div>
+		</div>
+        </div>
+    </div>
+</div>
+<!-- section end -->
+</div>	
+

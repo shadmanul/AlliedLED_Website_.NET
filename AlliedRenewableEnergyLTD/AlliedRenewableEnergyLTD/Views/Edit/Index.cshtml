@@ -1,0 +1,117 @@
+﻿@model AlliedRenewableEnergyLTD.Models.Product
+
+@{
+    ViewBag.Title = "Allied - Edit Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="background">
+<div class="container">
+    <div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8" style="margin-top:50px; opacity:0.9; padding:50px 50px 100px 50px">
+            <div class="well" style="background-color:#212121; border-radius:0px; border:0; padding-top:40px">
+            @using (Html.BeginForm("Index", "Edit", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {   
+                @Html.HiddenFor(model => model.id)
+                @Html.HiddenFor(model => model.imagebytes)
+                @Html.HiddenFor(model => model.imagetype)
+                @Html.HiddenFor(model => model.dateadded)
+                <div style="color:#42b3e5; font-size:large; font-weight:bold" align="center" >@ViewBag.msg</div><br />
+                @Html.TextBoxFor(model => model.title, new { @placeholder = "Product Title", @required = "", @class = "textbox" }) 
+                @Html.DropDownListFor(model => model.category,
+                new List<SelectListItem>() { 
+                    new SelectListItem { Text = "LED Bulbs", Value = "LED Bulbs" }, 
+                    new SelectListItem { Text = "LED Lamps", Value = "LED Lamps" }, 
+                    new SelectListItem { Text = "Ceiling Lights", Value = "Ceiling Lights" }, 
+                    new SelectListItem { Text = "LED Panel Lights", Value = "LED Panel Lights" },
+                    new SelectListItem { Text = "LED Tube Lights", Value = "LED Tube Lights" }, 
+                    new SelectListItem { Text = "LED Office Lights", Value = "LED Office Lights" }, 
+                    new SelectListItem { Text = "Fancy Lights", Value = "Fancy Lights" }, 
+                    new SelectListItem { Text = "LED Strip Lights", Value = "LED Strip Lights" },
+                    new SelectListItem { Text = "LED Flood Light / Beam Light", Value = "LED Flood Light / Beam Light" }, 
+                    new SelectListItem { Text = "LED HI BAY", Value = "LED HI BAY" }, 
+                    new SelectListItem { Text = "Street Lights", Value = "Street Lights" }
+                }, new { @class = "dropdown" })
+                <div style="color:#42b3e5; font-size:large; font-weight:bold" align="center" >Use " - " while writing description. i.e. space dash space</div>
+                <div style="color:#42b3e5; font-size:large; font-weight:bold" align="center" >Ex. Product Size - D50xH88mm</div>
+                @Html.TextAreaFor(model => model.description, new { @placeholder = "Product Description", @class = "textarea", @row = "10" })
+                <div class="form-editor">
+                    <input type="file" name="FileUpload" class="form-control btn-info" accept="image/*"/>
+                    <div style="color:#42b3e5; font-size:large; font-weight:bold" align="center" >[ Less Than 250KB File Size ]</div>
+                </div>
+                <br />
+                <button type="submit" class="btn button btn-block">Done</button>
+            }
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+@*@Html.ValidationSummary(true)
+
+                <fieldset>
+                    <legend>Product</legend>
+
+                    @Html.HiddenFor(model => model.id)
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.title)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.title)
+                        @Html.ValidationMessageFor(model => model.title)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.category)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.category)
+                        @Html.ValidationMessageFor(model => model.category)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.description)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.description)
+                        @Html.ValidationMessageFor(model => model.description)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.quantity)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.quantity)
+                        @Html.ValidationMessageFor(model => model.quantity)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.price)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.price)
+                        @Html.ValidationMessageFor(model => model.price)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.imagetype)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.imagetype)
+                        @Html.ValidationMessageFor(model => model.imagetype)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.dateadded)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.dateadded)
+                        @Html.ValidationMessageFor(model => model.dateadded)
+                    </div>
+
+                    <p>
+                        <input type="submit" value="Save" />
+                    </p>
+                </fieldset>*@

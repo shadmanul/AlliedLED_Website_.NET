@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Allied Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Active6 = "active";
+    
+}
+<!-- about section -->
+<section class="about text-center" id="about">
+<div id="background">
+	<div class="container">
+		
+            <div style="margin:50px 0px 50px 0px;
+				min-height:150px; 
+				box-sizing:border-box; 
+				-moz-box-sizing:border-box;
+                -webkit-box-sizing:border-box;
+                background-color:#181818;
+                opacity: 0.97;
+                padding:0px 50px 50px 50px;">
+                <div class="row">
+			<h2 style="margin-top:0px;">Sign-In</h2>
+            <h4 style="color:#FFFFFF;">@ViewBag.msg</h4>
+			<div class="col-md-offset-3 col-md-6">	
+            @using (Html.BeginForm())
+            {           
+                <input type="text" class="textbox" id="username" name="UsernameTB" value="" required="" title="Please enter you username" placeholder="Username" />
+                <span class="help-block"></span>
+                
+                <input type="password" class="textbox" id="password" name="PasswordTB" placeholder="password" value="" required="" title="Please enter your password" />
+                <span class="help-block"></span>
+                              
+                <button type="submit" class="btn button btn-block">Login</button>
+                              
+            }
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+@*<div id="background">
+<div class="container">
+    <div>
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6" style="margin-top:50px; opacity:0.9; padding:50px 50px 100px 50px">
+            <div class="well" style="background-color:#212121; border-radius:0px; border:0; padding-top:40px">
+            @using (Html.BeginForm())
+            {           
+                <input type="text" class="textbox" id="username" name="UsernameTB" value="" required="" title="Please enter you username" placeholder="Username" />
+                <span class="help-block"></span>
+                
+                <input type="password" class="textbox" id="password" name="PasswordTB" placeholder="password" value="" required="" title="Please enter your password" />
+                <span class="help-block"></span>
+                    
+            <div style="color:#42b3e5; font-size:large; font-weight:bold" >@ViewBag.msg</div><br />
+                              
+            <button type="submit" class="btn button btn-block">Login</button>
+                              
+            }
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+*@

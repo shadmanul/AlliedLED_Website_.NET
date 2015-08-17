@@ -1,0 +1,48 @@
+﻿@model AlliedRenewableEnergyLTD.Models.Product
+
+@{
+    ViewBag.Title = "Allied - Add Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="background">
+<div class="container">
+    <div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8" style="margin-top:50px; opacity:0.9; padding:50px 50px 100px 50px">
+            <div class="well" style="background-color:#212121; border-radius:0px; border:0; padding-top:40px">
+            @using (Html.BeginForm("Index", "AddProducts", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {    
+                <div style="color:#42b3e5; font-size:x-large; font-weight:bold" align="center" >@ViewBag.msg</div><br />
+                @Html.TextBoxFor(model => model.title, new { @placeholder = "Product Title", @required = "", @class = "textbox" }) 
+                @Html.DropDownListFor(model => model.category,
+                new List<SelectListItem>() { 
+                    new SelectListItem { Text = "LED Bulbs", Value = "LED Bulbs" }, 
+                    new SelectListItem { Text = "LED Lamps", Value = "LED Lamps" }, 
+                    new SelectListItem { Text = "Ceiling Lights", Value = "Ceiling Lights" }, 
+                    new SelectListItem { Text = "LED Panel Lights", Value = "LED Panel Lights" },
+                    new SelectListItem { Text = "LED Tube Lights", Value = "LED Tube Lights" }, 
+                    new SelectListItem { Text = "LED Office Lights", Value = "LED Office Lights" }, 
+                    new SelectListItem { Text = "Fancy Lights", Value = "Fancy Lights" }, 
+                    new SelectListItem { Text = "LED Strip Lights", Value = "LED Strip Lights" },
+                    new SelectListItem { Text = "LED Flood Light / Beam Light", Value = "LED Flood Light / Beam Light" }, 
+                    new SelectListItem { Text = "LED HI BAY", Value = "LED HI BAY" }, 
+                    new SelectListItem { Text = "Street Lights", Value = "Street Lights" }
+                }, new { @class = "dropdown" })
+                <div style="color:#42b3e5; font-size:large; font-weight:bold" align="center" >Use " - " while writing description. i.e. space dash space</div>
+                <div style="color:#42b3e5; font-size:large; font-weight:bold" align="center" >Ex. Product Size - D50xH88mm</div>
+                @Html.TextAreaFor(model => model.description, new { @placeholder = "Product Description", @class = "textarea", @row = "10" })
+                
+                <div class="form-editor">
+                    <input type="file" name="FileUpload" class="form-control btn-info" accept="image/*" required/>
+                    <div style="color:#42b3e5; font-size:large; font-weight:bold" align="center" >[ Less Than 250KB File Size ]</div>
+                </div>
+                <br />
+                <button type="submit" class="btn button btn-block">Add Product</button>
+                              
+            }
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,189 @@
+﻿.textbox
+{
+    width: 100%;
+	height: 40px;
+	background: #fff;
+	font-size: large;
+	font-weight:bold;
+	color: #084a5c;
+	font-family: 'Economica', sans-serif;
+	padding: 12px;
+	border:0;
+	margin-bottom: 10px;
+}
+.textarea
+{
+    width: 100%;
+    height: 250px;
+	background: #fff;
+	font-size: large;
+	font-weight:bold;
+	color: #084a5c;
+	font-family: 'Economica', sans-serif;
+	padding: 12px;
+	border:0;
+	margin-bottom: 5px;
+}
+.dropdown
+{
+    width: 100%;
+	background: #fff;
+	font-size: large;
+	font-weight:bold;
+	color: #084a5c;
+	font-family: 'Economica', sans-serif;
+	padding: 12px;
+	border:0;
+	margin-bottom: 10px;
+}
+.button{
+	width: 100%;
+	height: 40px;
+	font-size: 20px;
+	color: #fff;
+	background-color: #42b3e5;
+	padding: 0;
+	font-family: 'Economica', sans-serif;
+	font-weight: bold;
+}
+#background
+{
+    background-image:url('../img/b-2.jpg'); 
+    background-size: cover; 
+    position: relative; 
+    background-repeat:no-repeat
+}
+.hov:hover {
+    background-color:#f1f1f1;
+}
+.glyphicon { margin-right:10px; }
+.panel-body { padding:0px; }
+.panel-body table tr td { padding-left: 15px }
+.panel-body .table {margin-bottom: 0px; }
+
+#sidebar
+{
+    border-left: 0px; 
+    border-right: 0px; 
+    border-top: 0px;
+    border-bottom: 1px solid #42b3e5;
+    font-size:medium;
+    background-color: transparent;
+}
+.table th, .table td { 
+    border-top: none !important; 
+    border-bottom: 1px solid #42b3e5;
+ }
+ 
+#titleside
+{
+    font-size:large; 
+    font-weight:bold;   
+    color:#181818;
+}
+#titleside:link {
+    text-decoration: none;
+}
+#titleside:visited {
+    text-decoration: none;
+}
+#titleside:hover {
+    text-decoration: none;
+}
+#titleside:active {
+    text-decoration: none;
+}
+#sidebaritem
+{
+    color:#202020;
+    font-weight:bold;
+}
+#sidebaritem:hover
+{
+    color:#42b3e5;
+}
+.col
+{
+    display: block;
+    visibility: visible;
+} 
+@media (min-width: 290px) and (max-width: 991px) 
+{
+    .col
+    {
+        display: none;
+        visibility: hidden;
+    }   
+}
+
+#separator
+{
+    font-size: 19px;
+    font-weight: bold;
+    border-bottom: 0px solid #42b3e5;
+    padding:5px 0px 0px 0px
+}
+.caret-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid rgba(0, 0, 0, 0);
+    border-right: 4px solid rgba(0, 0, 0, 0);
+    border-bottom: 4px solid;
+    
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
+}
+
+
+
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  bottom: 40px;
+  right: 10px;
+  /* image replacement properties */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: url(../img/top.png) no-repeat center 50%;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+  -moz-transition: opacity .3s 0s, visibility 0s .3s;
+  transition: opacity .3s 0s, visibility 0s .3s;
+}
+.cd-top.cd-is-visible, .cd-top.cd-fade-out, .no-touch .cd-top:hover {
+  -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+  -moz-transition: opacity .3s 0s, visibility 0s 0s;
+  transition: opacity .3s 0s, visibility 0s 0s;
+}
+.cd-top.cd-is-visible {
+  /* the button becomes visible */
+  visibility: visible;
+  opacity: 1;
+}
+.cd-top.cd-fade-out {
+  /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+  opacity: .5;
+}
+.no-touch .cd-top:hover {
+  background-color: #e86256;
+  opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+  .cd-top {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cd-top {
+    height: 60px;
+    width: 60px;
+    right: 30px;
+    bottom: 30px;
+  }
+}

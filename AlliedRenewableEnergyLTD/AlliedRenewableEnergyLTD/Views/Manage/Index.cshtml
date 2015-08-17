@@ -1,0 +1,87 @@
+﻿@model IEnumerable<AlliedRenewableEnergyLTD.Models.Product>
+
+@{
+    ViewBag.Title = "Allied - Manage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int c = 0;
+}
+<div style="background-color:White">
+
+    <div class="container" style="font-size:larger; font-weight:bold">
+    
+        <div class="table-responsive">
+            <table class="table">
+                @using (Html.BeginForm("Index","Manage",FormMethod.Get))
+                {
+                    <tr>
+                        <th align="left" colspan="1">
+                            <br />
+                            <br />
+                           <input type="text" id="txtSearch" name="search" class="form-control" placeholder="Search by Title" />
+                        </th>
+                    </tr>
+                    <tr>
+                        <th align="right" colspan="1">
+                           <input type="submit" name="submit" class="form-control btn-info" value="Search" />
+                            <br />
+                            <br />
+                        </th>
+                    </tr>
+                }
+                <tr>
+                    <th>
+                        TITLE
+                    </th>
+                    <th>
+                        CATEGORY
+                    </th>
+                    <th>
+                        DATE ADDED
+                    </th>
+                    <th></th>
+                </tr>
+
+            @foreach (var item in Model) {
+                c = c + 1;
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.category)
+                    </td>
+                    <td>
+                        @item.dateadded.Day/@item.dateadded.Month/@item.dateadded.Year
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Index", "Edit", new { id = item.id })">Edit</a> |
+                        <a href="" data-toggle="modal" data-target="#project-@c">Delete</a>
+                        <!-- Modal -->
+				        <div class="modal fade" id="project-@c" tabindex="-1" role="dialog" aria-labelledby="project-@c-label" aria-hidden="true">
+					        <div class="modal-dialog modal-lg">
+						        <div class="modal-content">
+							        <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+								        <h4 class="modal-title" id="project-@c-label">Project Title</h4>
+							        </div>
+							        <div class="modal-body">
+                                        <br /><br />
+								        <h3 style="font-size:xx-large; margin-left:20px; color: #686868 ; font-weight:bold">Are you sure</h3>
+							        </div>
+							        <div class="modal-footer">
+                                        <a href="@Url.Action("Delete", "Manage", new { id = item.id })" class="btn btn-md btn-info">Yes</a>
+								        <button type="button" class="btn btn-md btn-info" data-dismiss="modal">No</button>
+							        </div>
+						        </div>
+					        </div>
+				        </div>
+				        <!-- Modal end -->
+                    </td>
+                </tr>
+                
+            }
+
+            </table>
+        </div>
+    </div>>
+</div>

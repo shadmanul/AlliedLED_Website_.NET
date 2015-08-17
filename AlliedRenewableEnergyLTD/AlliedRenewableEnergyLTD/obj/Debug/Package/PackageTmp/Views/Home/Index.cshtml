@@ -1,0 +1,298 @@
+﻿@model IEnumerable<AlliedRenewableEnergyLTD.Models.Product>
+@{
+    ViewBag.Title = "Allied - Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Active1 = "active";
+    int c = 0;
+}
+
+<div id="background">
+
+	    <div id="wowslider-container1">
+	    <div class="ws_images"><ul>
+		    <li><img src="~/Content/data1/images/b5.jpg" alt="b4" title="Which Industry is best for you? Compare Industrials products and select the best option for you." id="wows1_0"/></li>
+		    <li><img src="~/Content/data1/images/b4.jpg" alt="b7" title="Which Home or Office is best for you? Compare Home & Office products and select the best option for you." id="wows1_1"/></li>
+		    <li><img src="~/Content/data1/images/b7.jpg" alt="b9" title="Compare Outdoor products and select the best option for you." id="wows1_2"/></li>
+		    <li><img src="~/Content/data1/images/b9.jpg" alt="b5" title="We provide best quality LED lights." id="wows1_3"/></li>
+	    </ul></div>
+	    <div class="ws_bullets"><div>
+		    <a href="#" title="b4">2</a>
+		    <a href="#" title="b7">3</a>
+		    <a href="#" title="b9">4</a>
+		    <a href="#" title="b5">1</a>
+	    </div></div>
+	    <div class="ws_shadow"></div>
+	    </div>	
+    <div style="min-height:150px; 
+				box-sizing:border-box; 
+				-moz-box-sizing:border-box;
+                -webkit-box-sizing:border-box;
+                background-color:White;
+                opacity: 0.95;
+                padding:20px 50px 50px 50px;">
+
+    <div style="font-size:x-large; color#181818; padding-bottom:10px;font-weight:bold;">Recently Arrived Products:</div>
+    <div class="isotope-container row grid-space-20">
+        @foreach (var item in Model)
+        {
+            c = c + 1;
+
+		<div class="col-sm-3 col-xs-6 col-md-2 isotope-item web-design">
+			<div>
+				<div class="overlay-container">
+					<img src="@Url.Action("GetImage", "Products", new { id = item.id })" alt="" width="100%">
+					<a class="overlay" href="@Url.Action("Index", "Products", new { category = item.category})"></a>
+				</div>
+				<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1">@item.title</a>
+			</div>
+			
+		</div>
+
+        }
+    </div>
+	<!-- portfolio items end -->
+
+    
+
+    <!-- Tiles -->
+    <div style="margin-bottom:20px">
+    <div class="dynamicTile">
+        <div class="row" style="opacity:0.95">
+            
+            <div class="col-sm-2 col-md-2 col-xs-4">
+            <a class="overlay-container" href="@Url.Action("Index", "AboutUs")">
+                <div id="tile1" class="tile">
+                    <div class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active text-center">
+                                <div>
+                                    <span class="fa fa-info bigicon"></span>
+                                </div>
+                                <div class="icontext">
+                                    About Allied
+                                </div>
+                            </div>
+                            <div class="item text-center">
+                                <div>
+                                    <span class="fa fa-bolt bigicon"></span>
+                                </div>
+                                <div class="icontext">
+                                    About Allied
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="overlay"></div>
+                </a>
+            </div>
+
+            <div class="col-sm-2 col-md-2 col-xs-4">
+            <a class="overlay-container" href="@Url.Action("Index", "Products", new { category = "LED Bulbs" })">
+                <div id="tile3" class="tile">
+                    <div class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            
+                            <div class="item active text-center">
+                                <div>
+                                    <span class="fa fa-building-o bigicon"></span>
+                                </div>
+                                <div class="icontext">
+                                    Home & Offices
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="~/Content/img/tiles/home.jpg" class="img-responsive" />
+                            </div>
+                            <div class="item text-center">
+                                <div>
+                                    <span class="fa fa-bank bigicon"></span>
+                                </div>
+                                <div class="icontext">
+                                    Home & Offices
+                                </div>
+                            </div>
+                            
+                            <div class="item">
+                                <img src="~/Content/img/tiles/office.jpg" class="img-responsive" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="overlay"></div>
+            </a>
+            </div>
+            
+            <div class="col-sm-2 col-md-2 col-xs-4">
+            <a class="overlay-container" href="@Url.Action("Index", "Products", new { category = "LED Flood Light / Beam Light" })">
+                <div id="tile2" class="tile">
+                    <div class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active text-center">
+                                <div>
+                                    <span class="fa fa-bar-chart bigicon"></span>
+                                </div>
+                                <div class="icontext">
+                                    Industrials
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="~/Content/img/tiles/industrial1.jpg" class="img-responsive" />
+                            </div>
+                            <div class="item text-center">
+                                <div>
+                                    <span class="fa fa-globe bigicon"></span>
+                                </div>
+                                <div class="icontext">
+                                    Industrials
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="~/Content/img/tiles/industrial2.jpg" class="img-responsive" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="overlay"></div>
+            </a>
+            </div>
+
+            <div class="col-sm-2 col-md-2 col-xs-4">
+            <a class="overlay-container" href="@Url.Action("Index", "Products", new { category = "Street Lights" })">
+                <div id="tile6" class="tile">
+                    <div class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active text-center">
+                                <div>
+                                    <span class="fa fa-car bigicon"></span>
+                                </div>
+                                <div class="icontext">
+                                    Outdoors
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="~/Content/img/tiles/outdoor1.jpg" class="img-responsive" />
+                            </div>
+                            <div class="item text-center">
+                                <div>
+                                    <span class="fa fa-bicycle bigicon"></span>
+                                </div>
+                                <div class="icontext">
+                                    Outdoors
+                                </div>
+                            </div>
+                            <div class="item">
+                                <img src="~/Content/img/tiles/outdoor2.jpg" class="img-responsive" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="overlay"></div>
+            </a>
+            </div>
+
+            
+            <div class="col-sm-2 col-md-2 col-xs-4">
+            <a class="overlay-container" href="@Url.Action("Index", "Catalogue")">
+                <div id="tile5" class="tile">
+                    <div class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active text-center">
+                                <div>
+                                    <span class="fa fa-book bigicon"></span>
+                                </div>
+                                <div class="icontext">
+                                    Catalogue
+                                </div>
+                            </div>
+                            <div class="item text-center">
+                                <div>
+                                    <span class="fa fa-area-chart bigicon"></span>
+                                </div>
+                                <div class="icontext">
+                                    Catalogue
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="overlay"></div>
+                </a>
+            </div>
+            <div class="col-sm-2 col-md-2 col-xs-4">
+            <a class="overlay-container" href="@Url.Action("Index", "Contact")">
+                <div id="tile4" class="tile">
+                    <div class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active text-center">
+                                <div>
+                                    <span class="fa fa-mobile bigicon"></span>
+                                </div>
+                                <div class="icontext">
+                                    +880 1847 088613
+                                </div>
+                            </div>
+                            <div class="item text-center">
+                                <div>
+                                    <span class="fa fa-phone bigicon"></span>
+                                </div>
+                                <div class="icontext">
+                                    +880 1847 088612
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="overlay"></div>
+                </a>
+            </div>
+            
+
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".tile").height($("#tile1").width());
+            $(".carousel").height($("#tile1").width());
+            $(".item").height($("#tile1").width());
+
+            $(window).resize(function () {
+                if (this.resizeTO) clearTimeout(this.resizeTO);
+                this.resizeTO = setTimeout(function () {
+                    $(this).trigger('resizeEnd');
+                }, 10);
+            });
+
+            $(window).bind('resizeEnd', function () {
+                $(".tile").height($("#tile1").width());
+                $(".carousel").height($("#tile1").width());
+                $(".item").height($("#tile1").width());
+            });
+
+        });
+    </script>
+
+
+    <!-- Metro Tiles - END -->
+
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+	<script type="text/javascript" src="~/Content/engine1/wowslider.js"></script>
+	<script type="text/javascript" src="~/Content/engine1/script.js"></script>
+	<!-- End WOWSlider.com BODY section -->

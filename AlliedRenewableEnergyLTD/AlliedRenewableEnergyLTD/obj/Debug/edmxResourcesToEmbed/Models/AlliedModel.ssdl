@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AlliedModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="AlliedModelStoreContainer">
+    <EntitySet Name="LoginInfos" EntityType="AlliedModel.Store.LoginInfos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Products" EntityType="AlliedModel.Store.Products" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="LoginInfos">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="category" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="imagetype" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="imagebytes" Type="varbinary(max)" Nullable="false" />
+    <Property Name="dateadded" Type="date" Nullable="false" />
+  </EntityType>
+</Schema>
